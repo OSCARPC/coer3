@@ -1,3 +1,4 @@
+
 $(document).on("ready",ini);
 
 function ini()
@@ -30,27 +31,10 @@ function consultarEstudiantes()
 		}
 }
 
-function traerDatos()
-{
-    try
-    {
-        var strHtml = "";
-		$.ajax({
-				global: false,
-				dataType: "html",
-				async: false,
-                type: "POST",
-                url: 'http://190.42.217.93/mobile/m/php/consultar_estudiantes.php',
-                data: $("#form").serialize(),
-            }).done(function (resultado) {
+function traerDatos(){
+	var la=document.getElementById("latitud").value;
+	var lo=document.getElementById("longitud").value;
+    var url='http://190.42.217.93/mobile/m/php/insert.php?latitud='+la+'&longitud='+lo;
+window.location=url;
 
-                $("#listaDatos").html(resultado);
-                $("#listaDatos").listview().listview('refresh');
-				setTimeout(function() { window.location='index.html'; }, 2000);
-        });
-    }
-    catch(ex)
-    {
-        alert("Error de datos!!");
-    }
 }
