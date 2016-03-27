@@ -40,7 +40,7 @@ function traerDatos()
 				dataType: "html",
 				async: false,
                 type: "POST",
-                url: 'php/consultar_estudiantes.php',
+                url: 'http://190.42.217.93/mobile/m/php/consultar_estudiantes.php',
                 data: $("#form").serialize(),
             }).done(function (resultado) {
 
